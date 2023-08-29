@@ -1,0 +1,78 @@
+# defaults file for gikeymarica.nerdfonts
+---
+# this needs to be defined
+nf_user: false
+
+nf_fonts:
+  - "JetBrainsMono"
+  - "Meslo"
+
+# https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/3270.tar.xz
+nf_dl_base: "https://github.com/ryanoasis/nerd-fonts/releases/download"
+nf_version: 3.0.2
+nf_tarball_root: "{{ nf_dl_base }}/v{{ nf_version }}"
+nf_tarball_example: "{{ nf_tarball_root }}/{{ nf_fonts }}.tar.xz"
+
+# these variables aren't used but are here for convenience to move to 'nf_fonts'
+# For each release on GitHub: https://github.com/ryanoasis/nerd-fonts/releases/
+# tar the filename and remove the .tar.xz to get the name of the font
+# e.g., 3270.tar.gz --> "3270"
+nf_fonts_avilable:
+  - "3270"
+  - "Agave"
+  - "AnonymousPro"
+  - "Arimo"
+  - "AurulentSansMono"
+  - "BigBlueTerminal"
+  - "BitstreamVeraSansMono"
+  - "CascadiaCode"
+  - "CodeNewRoman"
+  - "ComicShannsMono"
+  - "Cousine"
+  - "DaddyTimeMono"
+  - "DejaVuSansMono"
+  - "DroidSansMono"
+  - "EnvyCodeR"
+  - "FantasqueSansMono"
+  - "FiraCode"
+  - "FiraMono"
+  - "Go-Mono"
+  - "Gohu"
+  - "Hack"
+  - "Hasklig"
+  - "HeavyData"
+  - "Hermit"
+  - "iA-Writer"
+  - "IBMPlexMono"
+  - "Inconsolata"
+  - "InconsolataGo"
+  - "InconsolataLGC"
+  - "IntelOneMono"
+  - "Iosevka"
+  - "IosevkaTerm"
+  - "JetBrainsMono"
+  - "Lekton"
+  - "LiberationMono"
+  - "Lilex"
+  - "Meslo"
+  - "Monofur"
+  - "Monoid"
+  - "Mononoki"
+  - "MPlus"
+  - "NerdFontsSymbolsOnly"
+  - "Noto"
+  - "OpenDyslexic"
+  - "Overpass"
+  - "ProFont"
+  - "ProggyClean"
+  - "RobotoMono"
+  - "ShareTechMono"
+  - "SourceCodePro"
+  - "SpaceMono"
+  - "Terminus"
+  - "Tinos"
+  - "Ubuntu"
+  - "UbuntuMono"
+  - "VictorMono"
+
+...
