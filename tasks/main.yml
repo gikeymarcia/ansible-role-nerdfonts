@@ -11,10 +11,11 @@
   with_items:
     - /usr/share/fonts/nerdfonts
     - /opt/nerdfonts/
+    - "/opt/nerdfonts/v{{ nf_version }}"
 
 - name: "Create system folders for each font"
   ansible.builtin.file:
-    path: "/tmp/nerdfonts/{{ item }}"
+    path: "/usr/share/fonts/nerdfonts/{{ item }}"
     owner: root
     group: root
     mode: "0755"
@@ -35,9 +36,10 @@
 - name: "Unarchive all dowloaded fonts."
   ansible.builtin.unarchive:
     src: "/opt/nerdfonts/v{{ nf_version }}/{{ item }}.tar.xz"
-    dest: "/tmp/nerdfonts/{{ item }}"
+    dest: "/usr/share/fonts/nerdfonts/{{ item }}"
     remote_src: true
   with_items: "{{ nf_fonts }}"
+  notify: scan_fonts
 
 ...
 # vim: ft=yaml.ansible :
