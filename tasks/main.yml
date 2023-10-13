@@ -3,7 +3,7 @@
 
 - name: "Make sure font directory exists."
   ansible.builtin.file:
-    path: "/usr/share/fonts/nerdfonts"
+    path: "{{ item }}"
     owner: root
     group: root
     mode: "0755"
