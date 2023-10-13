@@ -24,5 +24,12 @@
     mode: "0644"
   with_items: "{{ nf_fonts }}"
 
+- name: "Unarchive all dowloaded fonts."
+  ansible.builtin.unarchive:
+    src: "/opt/nerdfonts/v{{ nf_version }}/{{ item }}.tar.xz"
+    dest: /tmp/nf/
+    remote_src: true
+  with_items: "{{ nf_fonts }}"
+
 ...
 # vim: ft=yaml.ansible :
