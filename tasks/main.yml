@@ -9,8 +9,8 @@
     mode: "0755"
     state: directory
   with_items:
-    - /usr/share/fonts/nerdfonts
-    - /opt/nerdfonts
+    - "/usr/share/fonts/nerdfonts"
+    - "/opt/nerdfonts/{{ nf_version }}"
 
 - name: Download nerd fonts.
   ansible.builtin.get_url:
