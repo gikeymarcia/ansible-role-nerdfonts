@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: nerdfonts
   author: gikeymarcia
   description: Install selected nerdfonts into your $HOME directory.
   # company: your company (optional)

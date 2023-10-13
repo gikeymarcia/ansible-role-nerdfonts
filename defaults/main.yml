@@ -1,8 +1,5 @@
 # defaults file for gikeymarica.nerdfonts
 ---
-# this needs to be defined
-nf_user: false
-
 nf_fonts:
   - "JetBrainsMono"
   - "Meslo"

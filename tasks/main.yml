@@ -1,17 +1,27 @@
 # tasks file for gikeymarica.nerdfonts
 ---
-- name: Make sure the nf_user has been defined
-  tags: always
-  ansible.builtin.fail:
-    msg: "FAILURE! 'nf_user' variable must be defined. See README"
-  when: nf_user
 
-- name: Make sure font directory exists
+- name: "Make sure font directory exists."
   ansible.builtin.file:
-    path: "/home/{{ nf_user }}/.local/share/fonts"
-    owner: "{{ nf_user }}"
-    group: "{{ nf_user }}"
+    path: "/usr/share/fonts/nerdfonts"
+    owner: root
+    group: root
+    mode: "0755"
+    state: directory
+  with_items:
+    - /usr/share/fonts/nerdfonts
+    - /opt/nerdfonts
+
+- name: Download nerd fonts.
+  ansible.builtin.get_url:
+    url: "{{ nf_dl_base }}/v{{ nf_version }}/{{ item }}.tar.xz"
+    # example
+    # https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/3270.tar.xz
+    dest: "/opt/nerdfonts/v{{ nf_version }}/{{ item }}.tar.xz"
+    group: root
+    owner: root
     mode: "0644"
+  with_items: {{ nf_fonts }}
 
 ...
 # vim: ft=yaml.ansible :
