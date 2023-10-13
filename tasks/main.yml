@@ -21,7 +21,7 @@
     group: root
     owner: root
     mode: "0644"
-  with_items: {{ nf_fonts }}
+  with_items: "{{ nf_fonts }}"
 
 ...
 # vim: ft=yaml.ansible :
