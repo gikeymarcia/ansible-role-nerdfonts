@@ -11,7 +11,15 @@
   with_items:
     - /usr/share/fonts/nerdfonts
     - /opt/nerdfonts/
-    - "/opt/nerdfonts/v{{ nf_version }}"
+
+- name: "Create system folders for each font"
+  ansible.builtin.file:
+    path: "/tmp/nerdfonts/{{ item }}"
+    owner: root
+    group: root
+    mode: "0755"
+    state: directory
+  with_items: "{{  nf_fonts }}"
 
 - name: Download nerd fonts.
   ansible.builtin.get_url:
@@ -27,7 +35,7 @@
 - name: "Unarchive all dowloaded fonts."
   ansible.builtin.unarchive:
     src: "/opt/nerdfonts/v{{ nf_version }}/{{ item }}.tar.xz"
-    dest: /tmp/nf/
+    dest: "/tmp/nerdfonts/{{ item }}"
     remote_src: true
   with_items: "{{ nf_fonts }}"
 
