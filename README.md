@@ -1,7 +1,7 @@
 gikeymarcia.nerdfonts
 =========
 
-A role to install nerd fonts into your Linux $HOME directory
+A role to install nerd fonts onto your Linux system.
 
 Requirements
 ------------
@@ -11,13 +11,11 @@ None.
 Role Variables
 --------------
 
+```yaml
+nf_fonts:
+  - "JetBrainsMono"
+  - "Meslo"
 ```
-nf_user: false
-```
-
-You have to set the 'nf_user' name to determine where fonts will be installed (for example, `/home/{{ nf_user}}/.local/share/fonts/`).
-
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
 
 Dependencies
 ------------
