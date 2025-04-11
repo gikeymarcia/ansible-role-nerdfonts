@@ -6,7 +6,7 @@ nf_fonts:
 
 # https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/3270.tar.xz
 nf_dl_base: "https://github.com/ryanoasis/nerd-fonts/releases/download"
-nf_version: "3.0.2"
+nf_version: "3.3.0"
 nf_tarball_root: "{{ nf_dl_base }}/v{{ nf_version }}"
 nf_tarball_example: "{{ nf_tarball_root }}/{{ nf_fonts }}.tar.xz"
 
